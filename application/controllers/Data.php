@@ -1,6 +1,8 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-
+require FCPATH . '/vendor/autoload.php';
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
+use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 class Data extends CI_Controller {
 
 	public function __construct(){
@@ -219,6 +221,77 @@ class Data extends CI_Controller {
 			echo json_encode('failed');
 		}
 
+	}
+
+	public function download(){
+		$spreadsheet = new Spreadsheet();
+		$sheet = $spreadsheet->getActiveSheet();
+
+		$spreadsheet->getProperties()->setCreator('mana')
+		->setLastModifiedBy('mana')
+		->setTitle('Pengalaman proyek')
+		->setSubject('Pengalaman proyek NRC')
+		->setDescription('export data ke excel');
+
+		foreach(range('A', 'Z') as $columnID) {
+			$spreadsheet->getActiveSheet()->getColumnDimension($columnID)->setAutoSize(true);
+		}
+
+		$sheet->setCellValue('A1', 'nama_proyek');
+		$sheet->setCellValue('B1', 'alamat_proyek');
+		$sheet->setCellValue('C1', 'kode_buku');
+		$sheet->setCellValue('D1', 'tahun');
+		$sheet->setCellValue('E1', 'jenis_pekerjaan');
+		$sheet->setCellValue('F1', 'lokasi');
+		$sheet->setCellValue('G1', 'lingkup_pekerjaan');
+		$sheet->setCellValue('H1', 'volume_pekerjaan');
+		$sheet->setCellValue('I1', 'pemberi_kerja');
+		$sheet->setCellValue('J1', 'alamat_pemberi_kerja');
+		$sheet->setCellValue('K1', 'no_kontrak');
+		$sheet->setCellValue('L1', 'tanggal_kontrak');
+		$sheet->setCellValue('M1', 'nilai_kontrak');
+		$sheet->setCellValue('N1', 'nilai_kontrak_nonppn');
+		$sheet->setCellValue('O1', 'nilai_final');
+		$sheet->setCellValue('P1', 'status');
+		$sheet->setCellValue('Q1', 'mulai');
+		$sheet->setCellValue('R1', 'selesai');
+		$sheet->setCellValue('S1', 'konsultan');
+		$sheet->setCellValue('T1', 'penanggung_jawab');
+		$sheet->setCellValue('U1', 'keterangan');
+
+		$getdata = $this->query->get()->result();
+
+		$x = 2;
+		foreach($getdata as $get){
+			$sheet->setCellValue('A'.$x, $get->nama_proyek);
+			$sheet->setCellValue('B'.$x, $get->alamat_proyek);
+			$sheet->setCellValue('C'.$x, $get->kode_buku);
+			$sheet->setCellValue('D'.$x, $get->tahun);
+			$sheet->setCellValue('E'.$x, $get->jenis);
+			$sheet->setCellValue('F'.$x, $get->lokasi);
+			$sheet->setCellValue('G'.$x, $get->lingkup_pekerjaan);
+			$sheet->setCellValue('H'.$x, $get->volume_pekerjaan);
+			$sheet->setCellValue('I'.$x, $get->pemberi_kerja);
+			$sheet->setCellValue('J'.$x, $get->alamat_pemberi_kerja);
+			$sheet->setCellValue('K'.$x, $get->no_kontrak);
+			$sheet->setCellValue('L'.$x, $get->tanggal_kontrak);
+			$sheet->setCellValue('M'.$x, $get->nilai_kontrak);
+			$sheet->setCellValue('N'.$x, $get->nilai_kontrak_nonppn);
+			$sheet->setCellValue('O'.$x, $get->nilai_final);
+			$sheet->setCellValue('P'.$x, $get->status);
+			$sheet->setCellValue('Q'.$x, $get->mulai);
+			$sheet->setCellValue('R'.$x, $get->selesai);
+			$sheet->setCellValue('S'.$x, $get->konsultan);
+			$sheet->setCellValue('T'.$x, $get->penanggung_jawab);
+			$sheet->setCellValue('U'.$x, $get->keterangan);
+			$x++;
+		}
+
+		$writer = new Xlsx($spreadsheet);
+		// $date = date("Ymdhi");
+		$filename = 'data.xlsx';
+		$writer->save('./data/'.$filename);
+		redirect(base_url()."data/".$filename); 
 	}
 
 }

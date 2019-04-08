@@ -24,9 +24,13 @@
 			</div>
 		</div>
 		<div class="fixed-action-btn">
-			<a class="btn-floating btn-large  teal lighten-1 modal-trigger" data-target="reset" >
-				<i class="large material-icons">add</i>
+			<a class="btn-floating btn-large  teal lighten-1 modal-trigger" >
+				<i class="large material-icons">edit</i>
 			</a>
+			<ul>
+				<li><a class="btn-floating  green lighten-1 modal-trigger" data-target="reset"><i class="material-icons">add</i></a></li>
+				<li><a class="btn-floating light-blue lighten-1" id="download"><i class="material-icons">file_download</i></a></li>
+			</ul>
 		</div>
 		<div id="reset" class="modal modal-fixed-footer">
 			<div class="modal-content">
@@ -226,6 +230,10 @@
 			"bInfo" : false,
 			"language" : { search: "Cari data" },
 		});
+
+		$('#download').on('click',function(){
+			$(location).attr('href','<?php echo base_url("data/download/") ?>');
+		}); 
 
 		$('#send').on('click',function(){
 			var nama=$('#name').val();
