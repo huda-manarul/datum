@@ -19,7 +19,7 @@
 				<p><b>Lingkup Pekerjaan : </b><br>
 					<?php $array =  explode(',', $data->lingkup_pekerjaan);
 					foreach ($array as $item) {
-						echo "<li><p>".$item."</p></li>";
+						echo "<li>".$item."</li>";
 					}?>
 				</p>
 			</div>
@@ -27,7 +27,7 @@
 				<p><b>Volume Pekerjaan : </b><br>
 					<?php $array =  explode(',', $data->volume_pekerjaan);
 					foreach ($array as $item) {
-						echo "<li><p>$item</p></li>";
+						echo "<li>".$item."</li>";
 					}?>
 				</p>
 			</div>
@@ -91,6 +91,8 @@
 		</div>
 	</div>
 </div>
+
+
 <?php } ?>
 <script>
 	$(document).ready(function(){

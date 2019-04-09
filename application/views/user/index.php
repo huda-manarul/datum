@@ -4,6 +4,14 @@
 	<title>Dashboard</title>
 </head>
 <body>
+	<nav class="transparent z-depth-1">
+		<div class="nav-wrapper">
+			<div class="col s12">
+				<a href="#!" class="breadcrumb"></a>
+				<a href="<?php echo base_url(); ?>" class="breadcrumb"><b>Project</b></a>
+			</div>
+		</div>
+	</nav>
 	<div class="container ">
 		<div class="row ">
 			<div class="col-md-12">
@@ -104,6 +112,18 @@
 							</div>
 							<div class="input-field col s6">
 								<label>
+									<input type="checkbox" class="filled-in" name="lingkupkerja" id="lingkupkerja"  value="Pekerjaan Mekanikal" />
+									<span>Pekerjaan Mekanikal</span>
+								</label>
+							</div>
+							<div class="input-field col s6">
+								<label>
+									<input type="checkbox" class="filled-in" name="lingkupkerja" id="lingkupkerja"  value="Pekerjaan Elektrikal" />
+									<span>Pekerjaan Elektrikal</span>
+								</label>
+							</div>
+							<div class="input-field col s6">
+								<label>
 									<input type="checkbox" checked="" class="filled-in" name="lingkupkerja" id="lingkupkerja"  value="Pekerjaan Lainya" />
 									<span>Pekerjaan Lainya</span>
 								</label>
@@ -183,7 +203,7 @@
 						<div class="row">
 							<div class="input-field col s12">
 								<input id="pj" name="pj" type="text" class="validate">
-								<label for="pj">Penaggung Jawab</label>
+								<label for="pj">Penanggung Jawab</label>
 							</div>
 						</div>	
 						<div class="row">
@@ -289,6 +309,13 @@
 	height: 100%;
 }
 
+.breadcrumb:before {
+    color: #26a69a ;
+}
+
+.breadcrumb, .breadcrumb:last-child {
+   color: #26a69a ;
+}
 .container {
 	margin: 0 auto;
 	max-width: 1400px;

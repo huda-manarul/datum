@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 07 Apr 2019 pada 19.57
+-- Generation Time: 08 Apr 2019 pada 12.48
 -- Versi Server: 10.1.22-MariaDB
 -- PHP Version: 7.1.4
 
@@ -99,7 +99,7 @@ ALTER TABLE `pengalaman-proyek`
 -- AUTO_INCREMENT for table `file-proyek`
 --
 ALTER TABLE `file-proyek`
-  MODIFY `no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;COMMIT;
+  MODIFY `no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

@@ -4,18 +4,8 @@
 	<title></title>
 </head>
 <body>
-	<?php foreach ($detail as $data) { ?>
-	<nav class="transparent z-depth-1">
-		<div class="nav-wrapper">
-			<div class="col s12">
-				<a href="#!" class="breadcrumb"></a>
-				<a href="<?php echo base_url(); ?>" class="breadcrumb"><b>Project</b></a>
-				<a href="#!" class="breadcrumb"><?php echo $data->nama_proyek ?></a>
-			</div>
-		</div>
-	</nav>
-	<br>
 	<div class="container">
+		<?php foreach ($detail as $data) { ?>
 		<input type="text" id="id" value="<?php echo $data->id ?>" hidden="">
 		<?php } ?>
 		<div class="section1" id="section1">
@@ -257,7 +247,7 @@
 						<div class="row">
 							<div class="input-field col s12">
 								<input id="pj" name="pj" type="text" value="<?php echo $data->penanggung_jawab ?>" class="validate">
-								<label for="pj">Penanggung Jawab</label>
+								<label for="pj">Penaggung Jawab</label>
 							</div>
 						</div>	
 						<div class="row">
@@ -282,7 +272,7 @@
 			<?php } ?>
 		</div>
 
-		<div class="fixed-action-btn click-to-toggle">
+		<div class="fixed-action-btn">
 			<a class="btn-floating btn-large  teal lighten-1" >
 				<i class="large material-icons">mode_edit</i>
 			</a>
@@ -456,22 +446,4 @@
 	width: 900px;
 	height: 100%;
 }
-
-.breadcrumb:before {
-	color: #26a69a ;
-}
-
-.breadcrumb, .breadcrumb:last-child {
-	color: #26a69a ;
-}
-
 </style>
-<script>
-	document.addEventListener('DOMContentLoaded', function() {
-		var elems = document.querySelectorAll('.fixed-action-btn');
-		var instances = M.FloatingActionButton.init(elems, {
-			direction: 'top',
-			hoverEnabled: false
-		});
-	});
-</script>
