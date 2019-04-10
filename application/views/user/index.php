@@ -4,14 +4,18 @@
 	<title>Dashboard</title>
 </head>
 <body>
-	<nav class="transparent z-depth-1">
-		<div class="nav-wrapper">
-			<div class="col s12">
-				<a href="#!" class="breadcrumb"></a>
-				<a href="<?php echo base_url(); ?>" class="breadcrumb"><b>Project</b></a>
+	<div class="navbar-fixed">
+		<nav class="white z-depth-1">
+			<div class="nav-wrapper">
+				<div class="row">
+					<div class="col s11 offset-s1">
+						<a href="<?php echo base_url(); ?>" class="breadcrumb"><i class="material-icons">home</i></a>
+						<a href="<?php echo base_url(); ?>" class="breadcrumb"><b>Project</b></a>
+					</div>
+				</div>
 			</div>
-		</div>
-	</nav>
+		</nav>
+	</div>
 	<div class="container ">
 		<div class="row ">
 			<div class="col-md-12">
@@ -32,13 +36,8 @@
 			</div>
 		</div>
 		<div class="fixed-action-btn">
-			<a class="btn-floating btn-large  teal lighten-1 modal-trigger" >
-				<i class="large material-icons">edit</i>
-			</a>
-			<ul>
-				<li><a class="btn-floating  green lighten-1 modal-trigger" data-target="reset"><i class="material-icons">add</i></a></li>
-				<li><a class="btn-floating light-blue lighten-1" id="download"><i class="material-icons">file_download</i></a></li>
-			</ul>
+			<a class="btn-floating btn-large green lighten-1 modal-trigger" data-target="reset"><i class="large material-icons">add</i></a><br><br>
+			<a class="btn-floating btn-large  light-blue lighten-1" id="download"><i class="large material-icons">file_download</i></a>
 		</div>
 		<div id="reset" class="modal modal-fixed-footer">
 			<div class="modal-content">
@@ -310,11 +309,11 @@
 }
 
 .breadcrumb:before {
-    color: #26a69a ;
+	color: #26a69a ;
 }
 
 .breadcrumb, .breadcrumb:last-child {
-   color: #26a69a ;
+	color: #26a69a ;
 }
 .container {
 	margin: 0 auto;
@@ -335,4 +334,11 @@
 		width: 70%;
 	}
 }
+
+.fixed-action-btn{
+	left: 50px;
+	top:268px;
+	width: 60px;
+}
+
 </style>

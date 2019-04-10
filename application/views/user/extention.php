@@ -9,11 +9,11 @@
 	.'     <b>Jenis Pekerjaan : </b>'.$data->jenis_pekerjaan ?></p>
 
 	<ul id="tabs-swipe-demo" class="tabs">
-		<li class="tab col s3"><a class="active" href="#test-swipe-1">Detail Pekerjaan</a></li>
-		<li class="tab col s3"><a href="#test-swipe-2">Kontrak</a></li>
-		<li class="tab col s3"><a href="#test-swipe-3">Status Pelaksanaan</a></li>
+		<li class="tab col s3"><a class="active" href="#test-swipe-1"><b>Detail Pekerjaan</b></a></li>
+		<li class="tab col s3"><a href="#test-swipe-2"><b>Kontrak</a></b></li>
+		<li class="tab col s3"><a href="#test-swipe-3"><b>Status Pelaksanaan</b></a></li>
 	</ul>
-	<div id="test-swipe-1" class="col s12 transparent">
+	<div id="test-swipe-1" class="col s12">
 		<div class="row">
 			<div class="col s6">
 				<p><b>Lingkup Pekerjaan : </b><br>
@@ -33,7 +33,7 @@
 			</div>
 		</div>
 	</div>
-	<div id="test-swipe-2" class="col s12 transparent">
+	<div id="test-swipe-2" class="col s12">
 		<div class="row">
 			<div class="col s12">
 				<p><b>Pemberi Kerja : </b></p>
@@ -62,7 +62,7 @@
 			</div>
 		</div>
 	</div>
-	<div id="test-swipe-3" class="col s12 transparent">
+	<div id="test-swipe-3" class="col s12">
 		<div class="row">
 			<div class="col s4">
 				<p><b>Status : </b></p>
@@ -101,8 +101,7 @@
 </script>
 <style>
 
-
-.tabs .tab a{
+/*.tabs .tab a{
 	color:teal;
 }
 .tabs .tab a:focus, .tabs .tab a:focus.active {
@@ -118,7 +117,23 @@
 }
 .tabs .indicator {
 	background-color:#009688;
+}*/
+
+.tabs .tab a{
+    color:#00ACC1;
 }
+.tabs .tab a:hover,.tabs .tab a.active {
+	background-color:transparent;
+	color:#008B9B;
+}
+.tabs .tab.disabled a,.tabs .tab.disabled a:hover {
+	color:rgba(102,147,153,0.7);	
+}
+.tabs .indicator {
+	background-color:#009BAD;
+}
+
+
 .line {
 
 	width: 100%;

@@ -5,15 +5,19 @@
 </head>
 <body>
 	<?php foreach ($detail as $data) { ?>
-	<nav class="transparent z-depth-1">
-		<div class="nav-wrapper">
-			<div class="col s12">
-				<a href="#!" class="breadcrumb"></a>
-				<a href="<?php echo base_url(); ?>" class="breadcrumb"><b>Project</b></a>
-				<a href="#!" class="breadcrumb"><?php echo $data->nama_proyek ?></a>
+	<div class="navbar-fixed">
+		<nav class="white z-depth-1">
+			<div class="nav-wrapper">
+				<div class="row">
+					<div class="col s11 offset-s1">
+						<a href="<?php echo base_url(); ?>" class="breadcrumb"><i class="material-icons">home</i></a>
+						<a href="<?php echo base_url(); ?>" class="breadcrumb"><b>Project</b></a>
+						<a href="#!" class="breadcrumb"><?php echo $data->nama_proyek ?></a>
+					</div>
+				</div>
 			</div>
-		</div>
-	</nav>
+		</nav>
+	</div>
 	<br>
 	<div class="container">
 		<input type="text" id="id" value="<?php echo $data->id ?>" hidden="">
@@ -281,17 +285,11 @@
 			</form>
 			<?php } ?>
 		</div>
-
 		<div class="fixed-action-btn click-to-toggle">
-			<a class="btn-floating btn-large  teal lighten-1" >
-				<i class="large material-icons">mode_edit</i>
-			</a>
-			<ul>
-				<li><a class="btn-floating amber" id="refresh"><i class="material-icons">refresh</i></a></li>
-				<li><a class="btn-floating  green lighten-1 modal-trigger" data-target="edit"><i class="material-icons">text_fields</i></a></li>
-				<li><a class="btn-floating light-blue lighten-1 modal-trigger" data-target="upload"><i class="material-icons">attach_file</i></a></li>
-				<li><a class="btn-floating red lighten-1 modal-trigger" data-target="reset"><i class="material-icons">delete</i></a></li>
-			</ul>
+			<a class="btn-floating btn-large amber" id="refresh"><i class="large material-icons">refresh</i></a><br><br>
+			<a class="btn-floating btn-large  green lighten-1 modal-trigger" data-target="edit"><i class="large material-icons">mode_edit</i></a><br><br>
+			<a class="btn-floating btn-large light-blue lighten-1 modal-trigger" data-target="upload"><i class="large material-icons">attach_file</i></a><br><br>
+			<a class="btn-floating btn-large  red lighten-1 modal-trigger" data-target="reset"><i class="large material-icons">delete</i></a>
 		</div>
 
 	</div>
@@ -420,7 +418,7 @@
 				}
 			});
 			return false;
-			
+
 		});
 
 	});
@@ -463,6 +461,12 @@
 
 .breadcrumb, .breadcrumb:last-child {
 	color: #26a69a ;
+}
+
+.fixed-action-btn{
+	left: 50px;
+	top:210px;
+	width: 60px;
 }
 
 </style>
